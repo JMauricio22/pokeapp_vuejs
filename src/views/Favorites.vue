@@ -10,11 +10,19 @@
         <Card :name="item.name" :url="item.url" :favorites="true" />
       </v-col>
     </v-row>
+    <v-row v-if="pokemons.length === 0">
+      <v-col>
+        <ErrorMessage>
+          <h2 class="text-h5 font-weight-medium">You have not added items to favorites yet 😅.</h2>
+        </ErrorMessage>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import Card from '../components/Card.vue';
+import ErrorMessage from '../components/ErrorMessage.vue';
 
 export default {
   created() {
@@ -28,6 +36,7 @@ export default {
   },
   components: {
     Card,
+    ErrorMessage,
   },
 };
 </script>

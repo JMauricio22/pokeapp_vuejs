@@ -76,7 +76,7 @@ export default new Vuex.Store({
         const resp = await pokemonService.getPage(url);
         console.log(resp);
         context.commit('setItems', resp.data.results);
-        context.commit('setCount', resp.data.count);
+        context.commit('setCount', 800 / 20);
         context.commit('setPagination', {
           next: resp.data.next,
           previous: resp.data.previous,

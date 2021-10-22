@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable -->
   <div>
     <v-sheet v-if="!pokemon.id" color="white" elevation="1" width="100%">
       <v-skeleton-loader type="image" elevation="2" width="100%"></v-skeleton-loader>
@@ -13,12 +12,17 @@
     >
       <div class="d-flex flex-no-wrap justify-space-between">
         <div>
-          <v-card-title v-text="pokemon.name" class="text-h6 font-weight-medium pb-0"></v-card-title>
+          <v-card-title
+            v-text="pokemon.name"
+            class="text-h6 font-weight-medium pb-0"
+          ></v-card-title>
           <v-card-text class="pa-0">
             <v-list color="transparent">
               <v-list-item v-for="type of pokemon.types" :key="type.type.name">
                 <v-list-item-content class="py-0">
-                  <v-chip class="d-flex justify-center" :color="colorLighten4">{{ type.type.name }}</v-chip>
+                  <v-chip class="d-flex justify-center" :color="colorLighten4">
+                    {{ type.type.name }}
+                  </v-chip>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -26,7 +30,10 @@
         </div>
         <div class="d-flex justify-space-center align-center">
           <v-img
-            :src="pokemon.sprites.other.dream_world.front_default"
+            :src="
+              pokemon.sprites.other.dream_world.front_default ||
+                pokemon.sprites.front_default
+            "
             width="180"
             height="180"
             :contain="true"
@@ -45,7 +52,8 @@
           rounded
           elevation="10"
           large
-        >Details</v-btn>
+          >Details</v-btn
+        >
         <v-btn
           v-if="!favorites"
           class="px-4"
@@ -57,7 +65,9 @@
           icon
           text
         >
-          <v-img src="/pokemon_go_play_game_cinema_film_movie_icon-icons.com_69163.png"></v-img>
+          <v-img
+            src="/pokemon_go_play_game_cinema_film_movie_icon-icons.com_69163.png"
+          ></v-img>
         </v-btn>
       </v-card-actions>
     </v-card>

@@ -35,7 +35,7 @@
           max-height="250"
           max-width="300"
           :contain="true"
-          :src="pokemon.sprites.other.dream_world.front_default"
+          :src="pokemon.sprites.other.dream_world.front_default || pokemon.sprites.front_default"
         ></v-img>
       </div>
       <div class="d-flex justify-center">
