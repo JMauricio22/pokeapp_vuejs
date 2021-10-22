@@ -20,9 +20,9 @@
             <v-list color="transparent">
               <v-list-item v-for="type of pokemon.types" :key="type.type.name">
                 <v-list-item-content class="py-0">
-                  <v-chip class="d-flex justify-center" :color="colorLighten4">
-                    {{ type.type.name }}
-                  </v-chip>
+                  <v-chip class="d-flex justify-center" :color="colorLighten4">{{
+                    type.type.name
+                  }}</v-chip>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
