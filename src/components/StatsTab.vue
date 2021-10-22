@@ -13,13 +13,9 @@
         <tbody>
           <tr v-for="item of items" :key="item.name" style="width: 100%">
             <td>
-              <p>
-                {{ item.name }}
-              </p>
+              <p>{{ item.name }}</p>
             </td>
-            <td>
-              {{ item.stat }}
-            </td>
+            <td>{{ item.stat }}</td>
             <td>
               <v-progress-linear
                 :value="(item.base_stat / 255) * 100"

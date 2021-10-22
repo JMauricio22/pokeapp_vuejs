@@ -11,12 +11,12 @@
     <div v-if="!loading">
       <v-card v-for="ability of abilities" :key="ability.name">
         <v-card-title>{{ ability.name }}</v-card-title>
-        <v-card-subtitle>{{
+        <v-card-subtitle>
+          {{
           getFlavorText(ability['flavor_text_entries'])['flavor_text']
-        }}</v-card-subtitle>
-        <v-card-text>
-          {{ getEffect(ability['effect_entries']).effect }}
-        </v-card-text>
+          }}
+        </v-card-subtitle>
+        <v-card-text>{{ getEffect(ability['effect_entries']).effect }}</v-card-text>
       </v-card>
     </div>
   </div>
